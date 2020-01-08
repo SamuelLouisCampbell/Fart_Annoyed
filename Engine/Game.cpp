@@ -24,7 +24,9 @@
 Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
-	gfx( wnd )
+	gfx( wnd ),
+    rect0(200.0f,200.0f,200.0f,200.0f),
+    rect1(200.0f, 200.0f, 200.0f, 200.0f)
 {
 }
 
@@ -38,6 +40,8 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+    rect0.OverlapTest(rect1);
+
 }
 
 void Game::ComposeFrame()
