@@ -22,6 +22,7 @@
 #include "Game.h"
 #include "Colors.h"
 #include "Graphics.h"
+#include "FrameTimer.h"
 
 Game::Game( MainWindow& wnd )
 	:
@@ -42,7 +43,8 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-   
+    float dt = FrameTimer.Mark();
+
 }
 
 void Game::ComposeFrame()
