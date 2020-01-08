@@ -11,7 +11,7 @@ public:
 	Ball(Vec2& pos_in, Vec2& vel_in);
 
 	void Draw(Graphics& gfx);
-	void Update();
+	void Update(float dt);
 
 public:
 	Vec2 position;

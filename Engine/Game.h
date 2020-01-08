@@ -28,6 +28,7 @@
 #include "Colors.h"
 #include "Ball.h"
 #include "Vec2.h"
+#include "FrameTimer.h"
 
 class Game
 {
@@ -43,6 +44,7 @@ private:
 private:
 	MainWindow& wnd;
     Graphics gfx;
+    FrameTimer ft;
     
     Vec2 ballPos = { 200,200 };
     Vec2 ballVel = { 100,100 };

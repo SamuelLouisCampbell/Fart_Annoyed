@@ -11,7 +11,7 @@ void Ball::Draw(Graphics& gfx)
 	SpriteCodex::DrawBall(position,gfx);
 }
 
-void Ball::Update()
+void Ball::Update(float dt)
 {
-	position += velocity;
+	position += velocity * dt;
 }

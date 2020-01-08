@@ -43,8 +43,8 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-    float dt = FrameTimer.Mark();
-
+    float dt = ft.Mark();
+    b.Update(dt);
 }
 
 void Game::ComposeFrame()
