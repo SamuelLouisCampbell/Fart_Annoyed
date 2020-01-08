@@ -26,6 +26,8 @@
 #include "RectF.h"
 #include "Brick.h"
 #include "Colors.h"
+#include "Ball.h"
+#include "Vec2.h"
 
 class Game
 {
@@ -41,6 +43,10 @@ private:
 private:
 	MainWindow& wnd;
     Graphics gfx;
+    
+    Vec2 ballPos = { 200,200 };
+    Vec2 ballVel = { 100,100 };
+
     RectF window;
-   
+    Ball b; 
 };

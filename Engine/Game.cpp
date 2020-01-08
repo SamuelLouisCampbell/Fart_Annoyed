@@ -27,7 +27,8 @@ Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd ),
-    window(0.0f, 0.0f, gfx.ScreenWidth, gfx.ScreenHeight)
+    window(0.0f, 0.0f, gfx.ScreenWidth, gfx.ScreenHeight),
+    b(ballPos, ballVel)
 {
 }
 
@@ -46,5 +47,5 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-   
+    b.Draw(gfx);
 }
