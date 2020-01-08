@@ -24,6 +24,8 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "RectF.h"
+#include "Brick.h"
+#include "Colors.h"
 
 class Game
 {
@@ -38,8 +40,7 @@ private:
 
 private:
 	MainWindow& wnd;
-	Graphics gfx;
-    RectF rect0;
-    RectF rect1;
-
+    Graphics gfx;
+    RectF window;
+   
 };
