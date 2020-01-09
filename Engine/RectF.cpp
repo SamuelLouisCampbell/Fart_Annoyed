@@ -1,6 +1,6 @@
 #include "RectF.h"
 
-RectF::RectF(float in_top, float in_bottom, float in_left, float in_right)
+RectF::RectF(const float in_top, float in_bottom, float in_left, float in_right)
 {
 	top = in_top;
 	bottom = in_bottom;
@@ -8,20 +8,16 @@ RectF::RectF(float in_top, float in_bottom, float in_left, float in_right)
 	right = in_right;
 }
 
-RectF::RectF(Vec2& topLeft_in, Vec2& bottomRight_in)
+RectF::RectF(const Vec2& topLeft_in, Vec2& bottomRight_in)
 {
 	RectF(topLeft_in.x, topLeft_in.y, bottomRight_in.x, bottomRight_in.y);
 }
 
-RectF::RectF(Vec2& topLeft_in, float width_in, float height_in)
+RectF::RectF(const Vec2& topLeft_in, float width_in, float height_in)
 {
 	RectF(topLeft_in.x, topLeft_in.y, width_in, height_in);
 }
 
-RectF::RectF(float offsetX_in, float offsetY_in, Vec2& center)
-{
-	RectF(center, (offsetX_in / 2.0f), (offsetY_in / 2.0f));
-}
 
 bool RectF::OverlapTest(RectF& incoming_rect)
 {
@@ -31,5 +27,11 @@ bool RectF::OverlapTest(RectF& incoming_rect)
 		left <= incoming_rect.left &&
 		right >= incoming_rect.right;
 	
+}
+
+RectF RectF::FromCenter(const Vec2 center, float offset_x, float offset_y)
+{
+	const Vec2 half(offset_x, offset_y);
+	return RectF(center - half, center + half);
 }
 

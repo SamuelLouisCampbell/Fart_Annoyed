@@ -12,11 +12,17 @@ public:
 
 	void Draw(Graphics& gfx);
 	void Update(float dt);
+	bool CollideWindow(const RectF& windowBounds);
+	void changeVx();
+	void changeVy();
+	RectF MakeRect() const;
+
 
 public:
+	bool hasCollided = false;
 	Vec2 position;
 	Vec2 velocity;
-
+	static constexpr float radius = 7.0f;
 
 
 };
