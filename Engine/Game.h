@@ -45,8 +45,8 @@ private:
 	MainWindow& wnd;
     Graphics gfx;
     FrameTimer ft;
-    Vec2 ballPos = { 10.0f,10.0f };
-    Vec2 ballVel = { 200.0f,200.0f };
+    Vec2 ballPos = { 200.0f,200.0f };
+    Vec2 ballVel = { 200.0f,0.0f };
     Ball b; 
     RectF window;
    

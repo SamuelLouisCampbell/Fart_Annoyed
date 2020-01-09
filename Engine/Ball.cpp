@@ -23,11 +23,34 @@ bool Ball::CollideWindow(const RectF & windowBounds)
 {
 	bool collided = false;
 	const RectF boundary = MakeRect();
-	//if (rect.left < walls.left)
 	//{
-	//	pos.x += walls.left - rect.left;
-	//	ReboundX();
-	//	collided = true;
+	//	bool collided = false;
+	//	const RectF rect = GetRect();
+	//	if (rect.left < walls.left)
+	//	{
+	//		pos.x += walls.left - rect.left;
+	//		ReboundX();
+	//		collided = true;
+	//	}
+	//	else if (rect.right > walls.right)
+	//	{
+	//		pos.x -= rect.right - walls.right;
+	//		ReboundX();
+	//		collided = true;
+	//	}
+	//	if (rect.top < walls.top)
+	//	{
+	//		pos.y += walls.top - rect.top;
+	//		ReboundY();
+	//		collided = true;
+	//	}
+	//	else if (rect.bottom > walls.bottom)
+	//	{
+	//		pos.y -= rect.bottom - walls.bottom;
+	//		ReboundY();
+	//		collided = true;
+	//	}
+	//	return collided;
 	//}
 	if (boundary.left < windowBounds.left)
 	{
@@ -37,7 +60,7 @@ bool Ball::CollideWindow(const RectF & windowBounds)
 	}
 	else if (boundary.right > windowBounds.right)
 	{
-		position.x -= windowBounds.right - boundary.right;
+		position.x -= boundary.right - windowBounds.right;
 		changeVx();
 		collided = true;
 	}
@@ -50,7 +73,7 @@ bool Ball::CollideWindow(const RectF & windowBounds)
 	else if (boundary.bottom > windowBounds.bottom)
 	{
 		
-		position.y += (windowBounds.bottom - 30.0f);
+		position.y -= boundary.bottom - windowBounds.bottom;
 		changeVy();
 		collided = true;
 	}
