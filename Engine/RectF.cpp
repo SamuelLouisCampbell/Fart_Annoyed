@@ -1,21 +1,24 @@
 #include "RectF.h"
 
-RectF::RectF(const float in_top, float in_bottom, float in_left, float in_right)
+RectF::RectF(const float in_top, float in_left, float in_bottom, float in_right)
+	:
+	top(in_top),
+	left(in_left),
+	bottom(in_bottom),
+	right(in_right)
 {
-	top = in_top;
-	bottom = in_bottom;
-	left = in_left;
-	right = in_right;
 }
 
-RectF::RectF(const Vec2& topLeft_in, Vec2& bottomRight_in)
+RectF::RectF(const Vec2 & topLeft_in, Vec2 & bottomRight_in)
+	:
+	RectF(topLeft_in.x, topLeft_in.y, bottomRight_in.x, bottomRight_in.y)
 {
-	RectF(topLeft_in.x, topLeft_in.y, bottomRight_in.x, bottomRight_in.y);
 }
 
-RectF::RectF(const Vec2& topLeft_in, float width_in, float height_in)
+RectF::RectF(const Vec2 & topLeft_in, float width_in, float height_in)
+	:
+	RectF(topLeft_in, topLeft_in + Vec2( width_in, height_in))
 {
-	RectF(topLeft_in.x, topLeft_in.y, width_in, height_in);
 }
 
 

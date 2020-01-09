@@ -28,7 +28,7 @@ Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd ),
-    window(0.0f, gfx.ScreenHeight,0, gfx.ScreenWidth),
+    window(0.0f, 0.0f,gfx.ScreenHeight, gfx.ScreenWidth),
     b(ballPos, ballVel)
 {
 }
@@ -45,8 +45,9 @@ void Game::Go()
 void Game::UpdateModel()
 {
     float dt = ft.Mark();
-    b.Update(dt);
     b.CollideWindow(window);
+    b.Update(dt);
+   
 }
 
 void Game::ComposeFrame()
