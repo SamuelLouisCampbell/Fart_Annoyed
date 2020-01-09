@@ -9,21 +9,18 @@ class Ball
 public: 
 	Ball() = default;
 	Ball(Vec2& pos_in, Vec2& vel_in);
-
+	
+	RectF MakeRect() const;
 	void Draw(Graphics& gfx);
 	void Update(float dt);
 	bool CollideWindow(const RectF& windowBounds);
 	void changeVx();
 	void changeVy();
-	RectF MakeRect() const;
-
-
-public:
-	bool hasCollided = false;
+	
+private:
 	Vec2 position;
 	Vec2 velocity;
 	static constexpr float radius = 7.0f;
-
 
 };
 

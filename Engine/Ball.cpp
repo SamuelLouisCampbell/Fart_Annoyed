@@ -1,10 +1,11 @@
 #include "Ball.h"
 
 Ball::Ball(Vec2& pos_in, Vec2& vel_in)	
-{
-	position = pos_in;
-	velocity = vel_in;
-}
+	:
+	position(pos_in),
+	velocity(vel_in)
+	{
+	}
 
 void Ball::Draw(Graphics& gfx)
 {
@@ -18,11 +19,11 @@ void Ball::Update(float dt)
 
 }
 
-bool Ball::CollideWindow(const RectF& windowBounds)
+bool Ball::CollideWindow(const RectF & windowBounds)
 {
+	bool collided = false;
 	const RectF boundary = MakeRect();
 	
-	bool collided = false;
 	if (boundary.left < windowBounds.left)
 	{
 		//position.x = windowBounds.left;

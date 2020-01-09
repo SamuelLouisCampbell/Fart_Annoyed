@@ -45,7 +45,6 @@ void Game::Go()
 void Game::UpdateModel()
 {
     float dt = ft.Mark();
-  
     b.Update(dt);
     b.CollideWindow(window);
 }

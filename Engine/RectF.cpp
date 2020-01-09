@@ -29,7 +29,7 @@ bool RectF::OverlapTest(RectF& incoming_rect)
 	
 }
 
-RectF RectF::FromCenter(const Vec2 center, float offset_x, float offset_y)
+RectF RectF::FromCenter(const Vec2& center, float offset_x, float offset_y)
 {
 	const Vec2 half(offset_x, offset_y);
 	return RectF(center - half, center + half);
