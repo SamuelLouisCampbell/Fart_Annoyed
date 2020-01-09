@@ -26,26 +26,26 @@ bool Ball::CollideWindow(const RectF & windowBounds)
 	
 	if (boundary.left < windowBounds.left)
 	{
-		position.x = windowBounds.left;
+		position.x -= windowBounds.left + boundary.left;
 		changeVx();
 		collided = true;
 	}
 	else if (boundary.right > windowBounds.right)
 	{
-		position.x = windowBounds.right;
+		position.x += windowBounds.right - boundary.right;
 		changeVx();
 		collided = true;
 	}
 	if (boundary.top < windowBounds.top)
 	{
-		position.y = windowBounds.top;
+		position.y -= windowBounds.top + boundary.top;
 		changeVy();
 		collided = true;
 	}
 	else if (boundary.bottom > windowBounds.bottom)
 	{
 		
-		position.y = windowBounds.bottom;
+		position.y += windowBounds.bottom + radius;
 		changeVy();
 		collided = true;
 	}
