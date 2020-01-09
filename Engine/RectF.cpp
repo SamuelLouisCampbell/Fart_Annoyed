@@ -1,17 +1,17 @@
 #include "RectF.h"
 
-RectF::RectF(const float in_top, float in_left, float in_bottom, float in_right)
+RectF::RectF(const float in_top, float in_bottom, float in_left, float in_right)
 	:
 	top(in_top),
-	left(in_left),
 	bottom(in_bottom),
+	left(in_left),
 	right(in_right)
 {
 }
 
 RectF::RectF(const Vec2 & topLeft_in, Vec2 & bottomRight_in)
 	:
-	RectF(topLeft_in.x, topLeft_in.y, bottomRight_in.x, bottomRight_in.y)
+	RectF(topLeft_in.x, bottomRight_in.x, topLeft_in.y, bottomRight_in.y)
 {
 }
 
@@ -35,6 +35,6 @@ bool RectF::OverlapTest(RectF& incoming_rect)
 RectF RectF::FromCenter(const Vec2& center, float offset_x, float offset_y)
 {
 	const Vec2 half(offset_x, offset_y);
-	return RectF(center - half, center + half);
+	return RectF(Vec2(center + half),Vec2( center + half));
 }
 

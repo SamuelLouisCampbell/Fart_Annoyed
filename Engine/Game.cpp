@@ -28,8 +28,8 @@ Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd ),
-    window(0.0f, 0.0f,float (gfx.ScreenHeight),float( gfx.ScreenWidth)),
-    b(Vec2(200.0f,200.0f), Vec2(300.0f,0.0f))
+    window(0.0f, float(gfx.ScreenHeight), 0.0f,float( gfx.ScreenWidth)),
+    b(ballPos, ballVel)
 {
 }
 
