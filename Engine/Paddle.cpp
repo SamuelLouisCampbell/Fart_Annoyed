@@ -45,13 +45,16 @@ bool Paddle::CollideBall(Ball& ball)
 	bool collided = false;
 	const RectF boundary = MakeRect();
 	const RectF ballbound = ball.MakeRect();
-
-	if (boundary.OverlapTest(ballbound))
+	const Vec2 vel = ball.GetVelocity();
+	
+	if (vel.y > 0.0f)
 	{
+		if (boundary.OverlapTest(ballbound))
+		{
 			ball.changeVy();
 			collided = true;
+		}
 	}
-	
 	return collided;
 }
 
