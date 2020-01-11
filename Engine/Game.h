@@ -47,8 +47,8 @@ private:
     static constexpr float paddleHeight = 20.0f;
     static constexpr float padddleVelocity = 200.0f;
     
-    static constexpr int brickWidth = 18;
-    static constexpr int brickHeight = 4;
+    static constexpr int brickWidth = 40;
+    static constexpr int brickHeight = 20;
     static constexpr int gridWidth = 18; 
     static constexpr int gridHeight = 4;
     static constexpr int brickNumb = gridHeight * gridWidth;
