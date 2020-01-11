@@ -29,6 +29,7 @@
 #include "Ball.h"
 #include "Vec2.h"
 #include "FrameTimer.h"
+#include "Paddle.h"
 
 class Game
 {
@@ -42,16 +43,25 @@ private:
 	void UpdateModel();
 
 private:
-    
+    static constexpr float paddleWidth = 100.0f;
+    static constexpr float paddleHeight = 20.0f;
+    static constexpr float padddleVelocity = 200.0f;
+
+    Color innerColor = Colors::Red;
+    Color outerColor = Colors::Red;
 	MainWindow& wnd;
     Graphics gfx;
     FrameTimer ft;
-    Color brickcol;
-    Vec2 ballPos;
-    Vec2 ballVel;
+    Color brickcol = Colors::Red;
+    RectF brickset = { 300.0f, 600.0f, 400.0f, 420.0f };
+    Vec2 ballPos = { 200.0f,200.0f };
+    Vec2 ballVel = { 200.0f,200.0f };
+    Vec2 paddlePos = { float(gfx.ScreenWidth / 2), 550.0f };
     RectF window;
     Ball ball; 
     Brick brick;
+    Paddle paddle; 
    
+    
    
 };

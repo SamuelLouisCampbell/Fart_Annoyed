@@ -29,11 +29,9 @@ Game::Game( MainWindow& wnd )
 	wnd( wnd ),
 	gfx( wnd ),
     window(0.0f, float(gfx.ScreenWidth), 0.0f,float( gfx.ScreenHeight)),
-    ballPos(200.0f,200.0f),
-    ballVel(200.0f, 200.0f),
-    brickcol(Colors::Blue),
     ball(ballPos, ballVel),
-    brick(window, brickcol)
+    brick(brickset, brickcol),
+    paddle(wnd,paddlePos, innerColor, outerColor)
 {
 }
 
@@ -52,7 +50,9 @@ void Game::UpdateModel()
     float dt = ft.Mark();
     ball.CollideWindow(window);
     ball.Update(dt);
-  
+    brick.Destroyed(ball);
+    paddle.Update(dt);
+    paddle.CollideBall(ball);
   
    
 }
@@ -61,4 +61,6 @@ void Game::ComposeFrame()
 {
     brick.Draw(gfx);
     ball.Draw(gfx);
+    paddle.Draw(gfx);
+
 }

@@ -27,21 +27,25 @@ bool Ball::CollideWindow(const RectF& windowBounds)
 
 	if (boundary.bottom > windowBounds.bottom - radius)
 	{
+		
 		changeVy();
 		collided = true;
 	}
-	else if (boundary.top < windowBounds.top + (radius + 1.0f))
+	else if (boundary.top < windowBounds.top + radius + 1.0f)
 	{
+		
 		changeVy();
 		collided = true; 
 	}
 	if (boundary.right > windowBounds.right - radius)
 	{
+		
 		changeVx();
 		collided = true;
 	}
-	else if (boundary.left < windowBounds.left + (radius + 1.0f))
+	else if (boundary.left < windowBounds.left + radius + 1.0f)
 	{
+		
 		changeVx();
 		collided = true;
 	}
@@ -58,6 +62,7 @@ void Ball::changeVy()
 {
 	velocity.y = -velocity.y;
 }
+
 
 RectF Ball::MakeRect() const
 {

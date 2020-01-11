@@ -16,7 +16,7 @@ public:
 	bool CollideWindow(const RectF& windowBounds);
 	void changeVx();
 	void changeVy();
-	
+
 private:
 	Vec2 position;
 	Vec2 velocity;

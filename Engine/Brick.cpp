@@ -13,5 +13,26 @@ void Brick::Draw(Graphics& gfx)
 	{
 		gfx.DrawRect(rect, c);
 	}
+	else if(destroyed)
+	{
+		nohits = true;
+	}
 
 }
+
+bool Brick::Destroyed(Ball& ball)
+{
+	
+	if (rect.OverlapTest(ball.MakeRect()))
+	{
+		destroyed = true;
+		if (!nohits)
+		{
+			ball.changeVy();
+		}
+	
+	}
+	return destroyed;
+}
+
+
