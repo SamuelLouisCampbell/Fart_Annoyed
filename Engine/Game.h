@@ -42,13 +42,16 @@ private:
 	void UpdateModel();
 
 private:
+    
 	MainWindow& wnd;
     Graphics gfx;
     FrameTimer ft;
+    Color brickcol;
     Vec2 ballPos;
     Vec2 ballVel;
     RectF window;
     Ball ball; 
-    
+    Brick brick;
+   
    
 };

@@ -1,7 +1,7 @@
 #include "Brick.h"
 #include "Graphics.h"
 
-Brick::Brick(RectF& rect_in, Color c_in)
+Brick::Brick(RectF& rect_in, Color& c_in)
 	:
 	rect(rect_in),
 	c(c_in)
@@ -9,5 +9,9 @@ Brick::Brick(RectF& rect_in, Color c_in)
 
 void Brick::Draw(Graphics& gfx)
 {
-	gfx.DrawRect(rect, c);
+	if (!destroyed)
+	{
+		gfx.DrawRect(rect, c);
+	}
+
 }

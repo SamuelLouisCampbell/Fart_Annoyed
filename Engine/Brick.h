@@ -6,7 +6,7 @@ class Brick
 {
 public:
 	Brick() = default;
-	Brick(RectF& rect_in, Color c_in);
+	Brick(RectF& rect_in, Color& c_in);
 	void Draw(Graphics& gfx);
 
 public:

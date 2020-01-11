@@ -31,7 +31,9 @@ Game::Game( MainWindow& wnd )
     window(0.0f, float(gfx.ScreenWidth), 0.0f,float( gfx.ScreenHeight)),
     ballPos(200.0f,200.0f),
     ballVel(200.0f, 200.0f),
-    ball(ballPos, ballVel)
+    brickcol(Colors::Blue),
+    ball(ballPos, ballVel),
+    brick(window, brickcol)
 {
 }
 
@@ -57,6 +59,6 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-   
+    brick.Draw(gfx);
     ball.Draw(gfx);
 }
