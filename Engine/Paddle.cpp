@@ -11,7 +11,8 @@ Paddle::Paddle(MainWindow& wnd, Vec2& pos_in, Color& col1_in, Color& col2_in)
 
 void Paddle::Draw(Graphics& gfx)
 {
-	gfx.DrawRect(MakeRect(), innerColor);
+	gfx.DrawRect(MakeRect(), outerColor);
+	gfx.DrawRect(MakeCenterRect(), innerColor);
 }
 
 void Paddle::CollideWindow(const RectF& windowBounds)
@@ -57,5 +58,9 @@ bool Paddle::CollideBall(Ball& ball)
 RectF Paddle::MakeRect() const
 {
 	return RectF::FromCenter(pos, width, height);
+}
+RectF Paddle::MakeCenterRect() const
+{
+	return RectF::FromCenter(pos, width-wing, height);
 }
 

@@ -11,6 +11,7 @@ class Paddle
 {
 public:
 	RectF MakeRect() const;
+	RectF MakeCenterRect() const;
 	Paddle() = default;
 	Paddle(MainWindow& wnd, Vec2& pos_in, Color& col1_in, Color& col2_in);
 	void Draw(Graphics & gfx);
@@ -27,6 +28,7 @@ private:
 	float width = 40.0f;
 	static constexpr float height = 10.0f;
 	const float	velocity = 400.0f;
+	static constexpr float wing = 10.0f;
 
 };
 

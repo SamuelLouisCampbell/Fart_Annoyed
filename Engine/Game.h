@@ -47,17 +47,21 @@ private:
     static constexpr float paddleHeight = 20.0f;
     static constexpr float padddleVelocity = 200.0f;
 
-    Color innerColor = Colors::Red;
-    Color outerColor = Colors::Red;
+    Color innerColor = Colors::Gray;
+    Color outerColor = Colors::Cyan;
 	MainWindow& wnd;
     Graphics gfx;
     FrameTimer ft;
+    RectF window;
+
     Color brickcol = Colors::Blue;
     RectF brickset = { 200.0f, 500.0f, 360.0f, 400.0f };
+   
     Vec2 ballPos = { 200.0f,200.0f };
     Vec2 ballVel = { 200.0f,200.0f };
+    
     Vec2 paddlePos = { float(gfx.ScreenWidth / 2), 550.0f };
-    RectF window;
+    
     Ball ball; 
     Brick brick;
     Paddle paddle; 

@@ -13,8 +13,10 @@ public:
 
 public:
 	RectF& rect;
-	Color& c; 
+	Color& c;
 	bool destroyed = false;
 	bool nohits = false;
+
+
 };
 
