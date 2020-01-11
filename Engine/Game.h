@@ -52,8 +52,8 @@ private:
 	MainWindow& wnd;
     Graphics gfx;
     FrameTimer ft;
-    Color brickcol = Colors::Red;
-    RectF brickset = { 300.0f, 600.0f, 400.0f, 420.0f };
+    Color brickcol = Colors::Blue;
+    RectF brickset = { 200.0f, 500.0f, 360.0f, 400.0f };
     Vec2 ballPos = { 200.0f,200.0f };
     Vec2 ballVel = { 200.0f,200.0f };
     Vec2 paddlePos = { float(gfx.ScreenWidth / 2), 550.0f };

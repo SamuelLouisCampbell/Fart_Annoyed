@@ -16,6 +16,15 @@ void Paddle::Draw(Graphics& gfx)
 
 void Paddle::CollideWindow(const RectF& windowBounds)
 {
+	const RectF boundary = MakeRect();
+	if (boundary.left < windowBounds.left + 1.0f)
+	{
+		pos.x = windowBounds.left + width + 1.0f;
+	}
+	else if (boundary.right > windowBounds.right)
+	{
+		pos.x = windowBounds.right - width;
+	}
 }
 
 
@@ -27,7 +36,7 @@ void Paddle::Update(float dt)
 	}
 	else if (wnd.kbd.KeyIsPressed(VK_LEFT))
 	{
-		pos.x += -velocity * dt;
+		pos.x -= velocity * dt;
 	}
 }
 bool Paddle::CollideBall(Ball& ball)
@@ -36,14 +45,10 @@ bool Paddle::CollideBall(Ball& ball)
 	const RectF boundary = MakeRect();
 	const RectF ballbound = ball.MakeRect();
 
-	if (ballbound.left > boundary.left && ballbound.right < boundary.right)
+	if (boundary.OverlapTest(ballbound))
 	{
-		if (boundary.top < ballbound.bottom)
-		{
-
 			ball.changeVy();
 			collided = true;
-		}
 	}
 	
 	return collided;

@@ -53,6 +53,7 @@ void Game::UpdateModel()
     brick.Destroyed(ball);
     paddle.Update(dt);
     paddle.CollideBall(ball);
+    paddle.CollideWindow(window);
   
    
 }

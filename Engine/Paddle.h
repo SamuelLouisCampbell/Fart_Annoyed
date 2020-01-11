@@ -26,7 +26,7 @@ private:
 	Color& outerColor;
 	float width = 40.0f;
 	static constexpr float height = 10.0f;
-	const float	velocity = 200.0f;
+	const float	velocity = 400.0f;
 
 };
 

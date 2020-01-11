@@ -25,10 +25,10 @@ RectF::RectF(const Vec2 & topLeft_in, float width_in, float height_in)
 bool RectF::OverlapTest(const RectF& incoming_rect) const 
 {
 	return
-		top <= incoming_rect.top &&
-		bottom >= incoming_rect.bottom &&
-		left <= incoming_rect.left &&
-		right >= incoming_rect.right;
+		top < incoming_rect.top &&
+		bottom > incoming_rect.bottom &&
+		left < incoming_rect.left &&
+		right > incoming_rect.right;
 	
 }
 

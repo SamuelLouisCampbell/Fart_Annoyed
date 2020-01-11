@@ -63,6 +63,11 @@ void Ball::changeVy()
 	velocity.y = -velocity.y;
 }
 
+Vec2 Ball::GetVelocity() const
+{
+	return velocity; 
+}
+
 
 RectF Ball::MakeRect() const
 {
