@@ -30,9 +30,24 @@ Game::Game( MainWindow& wnd )
 	gfx( wnd ),
     window(0.0f, float(gfx.ScreenWidth), 0.0f,float( gfx.ScreenHeight)),
     ball(ballPos, ballVel),
-    brick(brickset, brickcol),
     paddle(wnd,paddlePos, innerColor, outerColor)
 {
+    const Color brickcol[4] = { Colors::Blue, Colors::LightGray, Colors::Magenta, Colors::Green };
+    const Vec2 topLeft(0.0f, 0.0f);
+
+    int i = 0;
+
+    for (int y = 0; y < brickNumb; y++)
+    {
+        Color c = brickcol[y];
+        for (int x = 0; x < gridWidth; x++)
+        {
+            bricks[i] = Brick(RectF(
+                topLeft + Vec2(x * brickWidth, y * brickHeight),
+                brickWidth, brickHeight), c);
+            i++;
+        }
+    }
 }
 
 void Game::Go()
@@ -50,7 +65,7 @@ void Game::UpdateModel()
     float dt = ft.Mark();
     ball.CollideWindow(window);
     ball.Update(dt);
-    brick.Destroyed(ball);
+    //brick.Destroyed(ball);
     paddle.Update(dt);
     paddle.CollideBall(ball);
     paddle.CollideWindow(window);
@@ -60,7 +75,7 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-    brick.Draw(gfx);
+    //brick.Draw(gfx);
     ball.Draw(gfx);
     paddle.Draw(gfx);
 

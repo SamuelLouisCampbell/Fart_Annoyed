@@ -46,6 +46,13 @@ private:
     static constexpr float paddleWidth = 100.0f;
     static constexpr float paddleHeight = 20.0f;
     static constexpr float padddleVelocity = 200.0f;
+    
+    static constexpr int brickWidth = 18;
+    static constexpr int brickHeight = 4;
+    static constexpr int gridWidth = 18; 
+    static constexpr int gridHeight = 4;
+    static constexpr int brickNumb = gridHeight * gridWidth;
+
 
     Color innerColor = Colors::Gray;
     Color outerColor = Colors::Cyan;
@@ -54,16 +61,13 @@ private:
     FrameTimer ft;
     RectF window;
 
-    Color brickcol = Colors::Blue;
-    RectF brickset = { 200.0f, 500.0f, 360.0f, 400.0f };
-   
     Vec2 ballPos = { 200.0f,200.0f };
     Vec2 ballVel = { 200.0f,200.0f };
     
     Vec2 paddlePos = { float(gfx.ScreenWidth / 2), 550.0f };
     
-    Ball ball; 
-    Brick brick;
+    Brick bricks[brickNumb];
+    Ball ball;
     Paddle paddle; 
    
     
