@@ -10,6 +10,7 @@ public:
 	RectF(const Vec2& topLeft_in, float width_in, float height_in);
 	bool OverlapTest(const RectF& other) const;
 	static RectF FromCenter(const Vec2& center, float offset_x, float offset_y);
+	RectF AddSomePadding(float padding_input) const;
 
 public:
 	bool isOverlapping = false;

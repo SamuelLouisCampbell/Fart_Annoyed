@@ -11,7 +11,7 @@ void Brick::Draw(Graphics& gfx)
 {
 	if (!destroyed)
 	{
-		gfx.DrawRect(rect, c);
+		gfx.DrawRect(rect.AddSomePadding(-padding), c);
 	}
 	else if(destroyed)
 	{

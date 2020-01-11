@@ -32,6 +32,11 @@ bool RectF::OverlapTest(const RectF& incoming_rect) const
 	
 }
 
+RectF RectF::AddSomePadding(float padding_input) const
+{	
+	return RectF(left - padding_input, right + padding_input, top - padding_input, bottom + padding_input);
+}
+
 RectF RectF::FromCenter(const Vec2& center, float halfWidth, float halfHeight)
 {
 	const Vec2 half(halfWidth, halfHeight);

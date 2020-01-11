@@ -50,7 +50,7 @@ private:
     static constexpr int brickWidth = 40;
     static constexpr int brickHeight = 20;
     static constexpr int gridWidth = 18; 
-    static constexpr int gridHeight = 4;
+    static constexpr int gridHeight = 4.0;
     static constexpr int brickNumb = gridHeight * gridWidth;
 
 
