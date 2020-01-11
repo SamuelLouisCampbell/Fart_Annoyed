@@ -28,9 +28,9 @@ Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd ),
-    window(0.0f, float(gfx.ScreenHeight), 0.0f,float( gfx.ScreenWidth)),
+    window(0.0f, float(gfx.ScreenWidth), 0.0f,float( gfx.ScreenHeight)),
     ballPos(200.0f,200.0f),
-    ballVel(500.0f, 500.0f),
+    ballVel(200.0f, 200.0f),
     ball(ballPos, ballVel)
 {
 }
